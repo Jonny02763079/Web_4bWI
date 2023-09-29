@@ -1,0 +1,1117 @@
+body {
+
+ 
+
+    font-family: Arial, sans-serif;
+
+ 
+
+    margin: 0;
+
+ 
+
+    padding: 0;
+
+ 
+
+    background-color: #f5f5f5;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+main{
+
+ 
+
+    display: flex;
+
+ 
+
+    flex-direction: column;
+
+ 
+
+    align-items: center;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+#backgroundFont{
+
+ 
+
+    display: flex;
+
+ 
+
+    justify-content: center;
+
+ 
+
+    align-items: center;
+
+ 
+
+    color: white;
+
+ 
+
+    font-size: 150px;
+
+ 
+
+    z-index: 0;
+
+ 
+
+    position: absolute;
+
+ 
+
+    top: 0px;
+
+ 
+
+    width: 100%;
+
+ 
+
+    height: auto;
+
+ 
+
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+
+ 
+
+    opacity: 0.03;
+
+ 
+
+    font-weight: 700;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+::-webkit-scrollbar {
+
+ 
+
+    width: 0px; /* Breite der Scrollbar */
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+header {
+
+ 
+
+    background-color: #333;
+
+ 
+
+    color: #fff;
+
+ 
+
+    text-align: center;
+
+ 
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+ 
+
+    position: relative;
+
+ 
+
+    height: 200px;
+
+ 
+
+    display: flex;
+
+ 
+
+    justify-content: center;
+
+ 
+
+    flex-direction: column;
+
+ 
+
+    align-items: center;
+
+ 
+
+    justify-content: center;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+img {
+
+ 
+
+    max-width: 250px;
+
+ 
+
+    z-index: 2;
+
+ 
+
+    position: absolute;
+
+ 
+
+    left: 0px;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+header p{
+
+ 
+
+    position: relative;
+
+ 
+
+    z-index: 3;
+
+ 
+
+    top: 28px;
+
+ 
+
+    font-weight: 900;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+header nav{
+
+ 
+
+    position: relative;
+
+ 
+
+    z-index: 3;
+
+ 
+
+    top: 40px;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+nav ul {
+
+ 
+
+    list-style: none;
+
+ 
+
+    padding: 0;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+nav li {
+
+ 
+
+    display: inline;
+
+ 
+
+    margin-right: 20px;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+nav a {
+
+ 
+
+    text-decoration: none;
+
+ 
+
+    color: #fff;
+
+ 
+
+    font-weight: bold;
+
+ 
+
+    transition: color 0.3s ease;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+nav a:hover {
+
+ 
+
+    color: #ff6600;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+main {
+
+ 
+
+    padding: 20px;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+#search {
+
+ 
+
+    text-align: center;
+
+ 
+
+    margin: 20px 0;
+
+ 
+
+    margin-top: 100px;
+
+ 
+
+    width: 100%;
+
+ 
+
+    display: flex;
+
+ 
+
+    justify-content: center;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+#search input {
+
+ 
+
+    padding: 10px;
+
+ 
+
+    width: 60%;
+
+ 
+
+    border: none;
+
+ 
+
+    border-radius: 4px;
+
+ 
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+ 
+
+    margin-right: 40px;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+#search button {
+
+ 
+
+    padding: 10px 20px;
+
+ 
+
+    background-color: #ff6600;
+
+ 
+
+    color: #fff;
+
+ 
+
+    border: none;
+
+ 
+
+    border-radius: 4px;
+
+ 
+
+    cursor: pointer;
+
+ 
+
+    transition: background-color 0.3s ease;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+#search button:hover {
+
+ 
+
+    background-color: #e55500;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+#stores {
+
+    background-color: #fff;
+
+    padding: 20px;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    margin-top: 40px;
+
+}
+
+ 
+
+ 
+
+ 
+
+#stores h2 {
+
+ 
+
+    color: black;
+
+ 
+
+    font-size: 28px;
+
+ 
+
+    margin-bottom: 10px;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+#stores ul {
+
+ 
+
+    list-style: none;
+
+ 
+
+    padding: 0;
+
+ 
+
+    display: flex;
+
+ 
+
+    justify-content: center;
+
+ 
+
+    align-items: center;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+.market{
+
+ 
+
+    height: 50px;
+
+ 
+
+    width: 250px;
+
+ 
+
+    margin: 10px;
+
+ 
+
+    background-color: #ff6600;
+
+ 
+
+    display: flex;
+
+ 
+
+    justify-content: center;
+
+ 
+
+    align-items: center;
+
+ 
+
+    border-radius: 5px;
+
+ 
+
+    transition: color 0.3s ease;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+#stores li a :hover{
+
+ 
+
+    height: 50px;
+
+ 
+
+    width: 250px;
+
+ 
+
+    margin: 10px;
+
+ 
+
+    background-color: #e55500;
+
+ 
+
+    display: flex;
+
+ 
+
+    justify-content: center;
+
+ 
+
+    align-items: center;
+
+ 
+
+    border-radius: 5px;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+ 
+
+#stores a {
+
+ 
+
+    text-decoration: none;
+
+ 
+
+    color: black;
+
+ 
+
+    font-weight: bold;
+
+ 
+
+    transition: color 0.3s ease;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+#tagline {
+
+ 
+
+    text-align: center;
+
+ 
+
+    margin: 20px 0;
+
+ 
+
+    color: #ff6600;
+
+ 
+
+    font-size: 18px;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+#product-list {
+
+ 
+
+    background-color: #fff;
+
+ 
+
+    padding: 20px;
+
+ 
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+ 
+
+    margin-top: 40px;
+
+ 
+
+    min-height: 200px;
+
+ 
+
+    width: 85%;
+
+ 
+
+    margin-bottom: 200px;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+#product-list h2 {
+
+ 
+
+    color: #333;
+
+ 
+
+    font-size: 24px;
+
+ 
+
+    margin-bottom: 10px;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+/* Weitere CSS-Styles für die Produktliste hinzufügen */
+
+ 
+
+ 
+
+ 
+
+footer {
+
+ 
+
+    background-color: #333;
+
+ 
+
+    color: #fff;
+
+ 
+
+    text-align: center;
+
+ 
+
+    padding: 10px 0;
+
+ 
+
+    font-size: 14px;
+
+ 
+
+    position: fixed;
+
+ 
+
+    bottom: 0px;
+
+ 
+
+    width: 100%;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+/* Stile für die Vorschlagsliste */
+
+ 
+
+#suggestions {
+
+ 
+
+    list-style-type: none;
+
+ 
+
+    padding: 0;
+
+ 
+
+    border: 1px solid #ccc;
+
+ 
+
+    max-height: 200px;
+
+ 
+
+    overflow-y: auto;
+
+ 
+
+    position: absolute;
+
+ 
+
+    right: 22.25%;
+
+ 
+
+    width: 64%;
+
+ 
+
+    min-height: 20px;
+
+ 
+
+    background-color: #fff;
+
+ 
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+ 
+
+    border-radius: 10px;
+
+ 
+
+    margin-top: -9px; /* Abstand zum Eingabefeld */
+
+ 
+
+    /*display: none; /* Standardmäßig ausgeblendet */
+
+ 
+
+  }
+
+ 
+
+ 
+
+ 
+
+  #suggestions li {
+
+ 
+
+    padding: 8px;
+
+ 
+
+    cursor: pointer;
+
+ 
+
+    transition: background-color 0.1s ease;
+
+ 
+
+  }
+
+ 
+
+ 
+
+ 
+
+  #suggestions li:hover {
+
+ 
+
+    background-color: #f0f0f0;
+
+ 
+
+  }
+
+ 
+
+ 
+
+ 
+
+  #searchSection{
+
+ 
+
+    width: 100%;
+
+ 
+
+  }
+
+ 
+
+ 
+
+ 
+
+  .product-card {
+
+    background-color: #fff;
+
+    border: 1px solid #e0e0e0;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    max-width: 300px;
+
+    transition: transform 0.3s ease-in-out;
+
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+ 
+
+.product-card:hover {
+
+    transform: scale(1.05);
+
+}
+
+ 
+
+.store {
+
+    font-size: 14px;
+
+    color: #ff6600;
+
+    margin-top: 10px;
+
+}
+
+ 
+
+ 
+
+ 
+
+h2 {
+
+    font-size: 20px;
+
+    margin: 10px 0;
+
+}
+
+ 
+
+.price {
+
+    font-size: 18px;
+
+    color: #333;
+
+    margin: 5px 0;
+
+}
+
+ 
+
+.add-to-cart-button {
+
+    background-color: #ff6600;
+
+    color: #fff;
+
+    border: none;
+
+    padding: 10px 20px;
+
+    font-size: 14px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    margin-top: 10px;
+
+    transition: background-color 0.3s ease-in-out;
+
+}
+
+ 
+
+.add-to-cart-button:hover {
+
+    background-color: #e55500;
+
+}
+
+ 
+
+
+/*
+.circleright{
+    position: absolute;
+    border-radius: 50%;
+    border: solid 0px #000;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    right: 10px;
+    top: 10px;
+}
+
+.circleleft{
+    position: absolute;
+    border-radius: 50%;
+    border: solid 0px #000;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    left: 10px;
+    top: 10px;
+}
+*/
+
