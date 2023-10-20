@@ -30,7 +30,16 @@
 }
 
 .ShowBoxes{
-    width: 1000px;
-    height: 500px;
+    width: 400px;
+    height: 200px;
+    border-radius: 10px;
     background-color: blue;
+    margin: 20px;
+    
+}
+
+.ShowBox{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
 }
