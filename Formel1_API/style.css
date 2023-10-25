@@ -32,9 +32,12 @@
 .ShowBoxes{
     width: 400px;
     height: 200px;
-    border-radius: 10px;
-    background-color: blue;
+    border-radius: 5px;
+    /*background-color: blue;*/
+    /*border-color: black;*/
+    border-style: outset;
     margin: 20px;
+    padding: 15px;
     
 }
 
@@ -43,3 +46,14 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
 }
+
+.ShowBox :hover{
+    background-color: #508AA8;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ShowBox ul {
+    pointer-events: none;
+  }

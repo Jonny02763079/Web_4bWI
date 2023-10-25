@@ -9,6 +9,8 @@ document.getElementById("test2").addEventListener("click", function () {
 
 var circuitDataFinal = [];
 
+var OnePressBoolean = true;
+
 let fillNameOfCurcuit = async (data) => {
   let index = 0;
   for (const element of data) {
@@ -16,6 +18,7 @@ let fillNameOfCurcuit = async (data) => {
       `http://ergast.com/api/f1/circuits/${data[index].circuitId}/results.json`
     );
     let resultAsJson = await result.json();
+    circuitDataFinal.push(resultAsJson);
     console.log("index:" + index, resultAsJson);
     
     let ShowBoxBody = document.getElementById("ShowBoxBody");
@@ -36,6 +39,7 @@ let FillTable = async (data) => {
 };
 
 let FillTable2 = (circuitDataFinal) => {
+  if(OnePressBoolean != false){
   console.log("inside");
 
   circuitDataFinal.forEach((element, index) => {
@@ -46,4 +50,7 @@ let FillTable2 = (circuitDataFinal) => {
     Infos.innerHTML = "Race Infos:"; //+ circuitData.season;
     ShowBoxInfos.appendChild(Infos);
   });
+}
+OnePressBoolean = false;
 };
+
