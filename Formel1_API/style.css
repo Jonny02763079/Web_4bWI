@@ -44,16 +44,57 @@
 .ShowBox{
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    /*grid-template-columns: repeat(3,1fr);*/
 }
 
-.ShowBox :hover{
-    background-color: #508AA8;
+
+.ShowBox :hover {
     cursor: pointer;
     border-radius: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Schatten hinzufügen */
+    transform: scale(1.02); 
+    transition: transform 0.3s;
+  }
 
 .ShowBox ul {
     pointer-events: none;
+}
+
+.ShowBoxImg{
+    width: 100px;
+    height: 100px;
+}
+
+.ShowBoxImg {
+    width: 70%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 20px; /* Runde Ecken für Bilder */
+    pointer-events: none;
   }
+
+.HeaderTitles{
+    
+}
+
+.HeaderLayout{
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    margin: 50px;
+    border-top: 1px;
+    border-bottom: 1px;
+    border-style: solid;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+.HeaderName{
+    pointer-events: none;
+}
+
+.NameOfHeader{
+    
+}
+
+  

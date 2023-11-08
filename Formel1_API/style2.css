@@ -1,69 +1,78 @@
+/* Die Header-Sektion */
 .Header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #d32f2f; /* Formel 1 Rot */
-    padding: 20px;
-  }
-  
-  .Icon {
-    width: 200px;
-    height: 100px;
-    background-color: #f1c40f; /* Gelb für das Formel 1-Logo */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    font-size: 24px;
-    color: #fff; /* Weiße Schriftfarbe */
-  }
-  
-  .Menu {
-    display: flex;
-    align-items: center;
-    font-size: 20px;
-    color: #fff;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .Menu li {
-    margin: 0 20px;
-  }
-  
-  .Menu li:hover {
-    cursor: pointer;
-    text-decoration: underline;
-  }
-  
-  .ShowBoxes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px;
-  }
-  
-  .ShowBox {
-    width: 30%; /* An die Anzahl der Boxen anpassen */
-    background-color: #333; /* Dunkles Grau */
-    color: #fff;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s, transform 0.2s;
-  }
-  
-  .ShowBox:hover {
-    background-color: #d32f2f; /* Formel 1 Rot bei Hover */
-    cursor: pointer;
-    transform: scale(1.05);
-  }
-  
-  .ShowBoxInfos {
-    text-align: center;
-  }
-  
-  /* Füge die entsprechenden Hintergrundbilder und Texte für die ShowBoxInfos hinzu. */
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222; /* Dunkles Grau */
+  padding: 20px;
+}
+
+.Icon {
+  width: 200px;
+  height: 100px;
+  background-color: #f1c40f; /* Formel 1 Gelb */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 24px;
+  color: #fff; /* Weiße Schriftfarbe */
+}
+
+/* Die Menü-Sektion */
+.Menu {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  color: #fff;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.Menu li {
+  margin: 0 20px;
+}
+
+.Menu li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Die ShowBoxes-Sektion */
+.ShowBoxes {
+  width: 400px;
+  height: 200px;
+  border-radius: 5px;
+  background-color: #444; /* Dunkles Grau */
+  border: 1px solid #666; /* Hellere Graue Umrandung */
+  margin: 20px;
+  padding: 15px;
+}
+
+.ShowBox {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.ShowBox:hover {
+  background-color: #508AA8; /* Formel 1 Blau bei Hover */
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ShowBox ul {
+  pointer-events: none;
+}
+
+/* Die Bilder in den ShowBoxes */
+.ShowBoxImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Runde Bilder */
+  object-fit: cover; /* Skaliert Bilder auf die Größe des Containers */
+}
+
+/* Weitere Anpassungen, wie Hintergrundbilder, Textfarben und Schriftarten, sind je nach Designvorlieben möglich. */
