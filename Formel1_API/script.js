@@ -10,8 +10,11 @@ let FillMenue = () =>{
     MenueLi.id = `MenueLi${index}`;
     MenueLi.innerHTML = MenueLinks[index];
     Menue.appendChild(MenueLi);
+
+    
   });
 }
+
 
 let FillHeaderName = (HeaderName) =>{
   console.log(HeaderName)
@@ -74,10 +77,19 @@ let fillNameOfCurcuit = async (data) => {
   }
 };
 
-let loadFunction = async () =>{
-  location.replace("http://127.0.0.1:5500/Formel1_API/index.html")
-  let res = await Rennstrecken();
+let loadFunction = async () => {
+  // Überprüfen, ob die Seite durch einen Reload ausgelöst wurde
+  const isReload = window.location.search.includes("reload=true");
+
+  if (isReload) {
+    // Führen Sie den Code nach dem Neuladen aus
+    let res = await Rennstrecken();
+  } else {
+    // Wenn nicht, dann Seite neu laden
+    window.location.replace("http://127.0.0.1:5500/Formel1_API/index.html?reload=true");
+  }
 }
+
 
 let FillHeader = () =>{
   console.log("coder" + countOfHeaderTitles)
