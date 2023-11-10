@@ -24,10 +24,13 @@ let FillHeaderName = (HeaderName) =>{
 
 FillMenue();
 
+
+let Rennstrecken = async() => {
 document.getElementById("MenueLi1").addEventListener("click", function () {
   fetch("http://ergast.com/api/f1/2023/circuits.json").then((result) => {
     result.json().then((data) => {
       //console.log(data)
+      loadFunction();
       FillHeader();
       FillTable(data.MRData.CircuitTable.Circuits);
       const HeaderName = document.getElementById("MenueLi1").innerHTML;
@@ -36,8 +39,10 @@ document.getElementById("MenueLi1").addEventListener("click", function () {
     });
   });
 });
-
+};
 //const data = {circuits:[], calendar:[]}
+
+Rennstrecken();
 
 const pictures = ["./track1.jpeg", "./track1.jpg", "./track2.jpeg"]
 
@@ -68,6 +73,11 @@ let fillNameOfCurcuit = async (data) => {
     index++;
   }
 };
+
+let loadFunction = async () =>{
+  location.replace("http://127.0.0.1:5500/Formel1_API/index.html")
+  let res = await Rennstrecken();
+}
 
 let FillHeader = () =>{
   console.log("coder" + countOfHeaderTitles)
