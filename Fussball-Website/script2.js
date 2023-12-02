@@ -45,56 +45,21 @@ function insertTable(data) {
         outputForTable += '<div>' + team.points + '</div>';
         outputForTable += '</div>';
     });
-
+    
 
     element.innerHTML = outputForTable;
 }
 
-function showTable() {
-    const element = document.getElementById("table");
-    element.style.display = '';
-}
-
-function hideTable() {
-    const element = document.getElementById("table");
-    element.style.display = 'none';
-}
-
-function changeIndexAndLoad(index, func) { //Calback Funktion
-    // Ändere den Index in der URL
-    const newUrl = 'http://127.0.0.1:5500/Fussball-Website/index.html?id=' + index;
-    history.pushState({}, '', newUrl);
-
-    // Rufe die zugehörige Funktion auf
-    func();
-}
 
 document.getElementById("1").addEventListener("click", function () {
-    changeIndexAndLoad('table', function () {
-        load();
-        showTable();
-    });
-});
+    let url = 'http://127.0.0.1:5500/Fussball-Website/index.html';
+    window.location.href = url;
+    load()
+})
 
-document.getElementById("2").addEventListener("click", function () {
-    changeIndexAndLoad('second', function () {
-        
-        console.log("Button 2 wurde geklickt");
-        hideTable();
-    });
-});
-
-document.getElementById("3").addEventListener("click", function () {
-    changeIndexAndLoad('third', function () {
-        hideTable();
-    });
-});
-
-document.getElementById("4").addEventListener("click", function () {
-    changeIndexAndLoad('fourth', function () {
-        hideTable(); //Hier wird nicht das tabellen format verwendet, deshalb muss später einmal hier was anderes stehen (andere Funktion)
-    });
-});
-
+document.getElementById("2").addEventListener("click", function (){
+    let url = 'http://127.0.0.1:5500/Fussball-Website/indexSecond.html?id=' + id;
+    window.location.href = url;
+})
 
 
