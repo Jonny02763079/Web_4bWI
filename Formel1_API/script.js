@@ -2,7 +2,7 @@
 
 const MenueLinks = ["Rennkalender", "Rennstrecken", "WM-Stand", "Fahrer"]
 
-let FillMenue = () =>{
+let FillMenue = () => {
   MenueLinks.forEach((element, index) => {
     let Menue = document.getElementById("Menue");
     const MenueLi = document.createElement("li");
@@ -11,12 +11,19 @@ let FillMenue = () =>{
     MenueLi.innerHTML = MenueLinks[index];
     Menue.appendChild(MenueLi);
 
-    
+
   });
 }
 
+let FillHeaderLayout = () =>{
+  let HeaderLayout = document.getElementById("ShowBoxBody");
+    const HeaderLayoutDiv = document.createElement("div");
+    HeaderLayoutDiv.classList.add("HeaderLayout");
+    HeaderLayoutDiv.id = "Header";
+    HeaderLayout.appendChild(HeaderLayoutDiv);
+}
 
-let FillHeaderName = (HeaderName) =>{
+let FillHeaderName = (HeaderName) => {
   console.log(HeaderName)
   let FillPlace = document.getElementById("HeaderName");
   const SpaceFiller = document.createElement("h1")
@@ -27,21 +34,26 @@ let FillHeaderName = (HeaderName) =>{
 
 FillMenue();
 
+let indexForClicks = true
 
-let Rennstrecken = async() => {
-document.getElementById("MenueLi1").addEventListener("click", function () {
-  fetch("http://ergast.com/api/f1/2023/circuits.json").then((result) => {
-    result.json().then((data) => {
-      //console.log(data)
-      loadFunction();
-      FillHeader();
-      FillTable(data.MRData.CircuitTable.Circuits);
-      const HeaderName = document.getElementById("MenueLi1").innerHTML;
-      console.log(HeaderName) //Überprüfen des Headernames
-      FillHeaderName(HeaderName)
-    });
-  });
-});
+let Rennstrecken = async () => {
+  console.log(indexForClicks)
+  document.getElementById("MenueLi1").addEventListener("click", function () {
+    if (indexForClicks === true) {
+
+      fetch("http://ergast.com/api/f1/2023/circuits.json").then((result) => {
+        result.json().then((data) => {
+          //console.log(data)
+          loadFunction();
+          FillHeaderLayout();
+          FillHeader();
+          FillTable(data.MRData.CircuitTable.Circuits);
+          const HeaderName = document.getElementById("MenueLi1").innerHTML;
+          console.log(HeaderName) //Überprüfen des Headernames
+          FillHeaderName(HeaderName)
+        });
+      });
+    }});
 };
 //const data = {circuits:[], calendar:[]}
 
@@ -66,13 +78,13 @@ let fillNameOfCurcuit = async (data) => {
     let resultAsJson = await result.json();
     circuitDataFinal.push(resultAsJson);
     console.log("index:" + index, resultAsJson);
-    
+
     let ShowBoxBody = document.getElementById("ShowBoxBody");
     const ShowBoxes = document.createElement("div");
     ShowBoxes.classList.add("ShowBoxes", `ShowBoxes${index}`);
     ShowBoxes.id = `ShowBoxes${index}`;
     ShowBoxBody.appendChild(ShowBoxes);
-    //ShowBoxes.innerHTML = "Circuit Name:" + data[index].circuitName;
+    ShowBoxes.innerHTML = "Circuit Name:" + data[index].circuitName;
     index++;
   }
 };
@@ -84,6 +96,7 @@ let loadFunction = async () => {
   if (isReload) {
     // Führen Sie den Code nach dem Neuladen aus
     let res = await Rennstrecken();
+    indexForClicks = false;
   } else {
     // Wenn nicht, dann Seite neu laden
     window.location.replace("http://127.0.0.1:5500/Formel1_API/index.html?reload=true");
@@ -91,43 +104,46 @@ let loadFunction = async () => {
 }
 
 
-let FillHeader = () =>{
+let FillHeader = () => {
   console.log("coder" + countOfHeaderTitles)
-  for(i = 0; i <= countOfHeaderTitles; i++){
+  for (i = 0; i <= countOfHeaderTitles; i++) {
     let ShowBoxHeader = document.getElementById("Header");
     const HeaderTitles = document.createElement("div");
     HeaderTitles.classList.add("HeaderTitles", `HeaderTitles${i}`);
     HeaderTitles.id = `HeaderTitles${i}`;
     HeaderTitles.innerHTML = HeaderTitle[i];
     ShowBoxHeader.appendChild(HeaderTitles);
-}
+  }
 }
 
 let FillTable = async (data) => {
- 
+
   let res = await fillNameOfCurcuit(data);
- 
+
   FillTable2(circuitDataFinal);
+  FillOrt(circuitDataFinal);
+  FillLand();
+  FillVeranstaltung();
 };
 
 let FillTable2 = (circuitDataFinal) => {
-  if(OnePressBoolean != false){
-  console.log("inside");
+  if (OnePressBoolean != false) {
+    console.log("inside");
 
-  circuitDataFinal.forEach((element, index) => {
-    let ShowBoxInfos = document.getElementById(`ShowBoxes${index}`);
-    const Infos = document.createElement("ul");
-    Infos.classList.add("ShowBoxInfos", `ShowBoxInfos${index}`);
-    Infos.id = `ShowBoxInfos${index}`;
-    //Infos.innerHTML = "Race Infos:"; //+ circuitData.season;
-    ShowBoxInfos.appendChild(Infos);
-  });
-}
-OnePressBoolean = false;
-FillImg(circuitDataFinal);
+    circuitDataFinal.forEach((element, index) => {
+      let ShowBoxInfos = document.getElementById(`ShowBoxes${index}`);
+      const Infos = document.createElement("div");
+      Infos.classList.add("ShowBoxInfos", `ShowBoxInfos${index}`);
+      Infos.id = `ShowBoxInfos${index}`;
+      //Infos.innerHTML = "Race Infos:"; //+ circuitData.season;
+      ShowBoxInfos.appendChild(Infos);
+    });
+  }
+  OnePressBoolean = false;
+  
 };
 
-let FillImg = (circuitDataFinal) =>{
+let FillStreckenLayout = (circuitDataFinal) => {
   circuitDataFinal.forEach((element, index) => {
     let ShowBoxImg = document.getElementById(`ShowBoxes${index}`);
     const img = document.createElement("img");
@@ -137,5 +153,21 @@ let FillImg = (circuitDataFinal) =>{
     ShowBoxImg.appendChild(img);
   });
 }
+
+const Ort = ["Hier", "Dort"];
+
+let FillOrt = (circuitDataFinal) =>{
+  circuitDataFinal.forEach((element, index) => {
+    let OrtBox = document.getElementById(`ShowBoxes${index}`);
+    const OrtName = document.createElement("div");
+    OrtName.classList.add("OrtDiv", `OrtDiv${index}`);
+    OrtName.id = `OrtDiv${index}`;
+    OrtName.innerHTML = Ort[index];
+    OrtBox.appendChild(OrtName);
+  });
+  FillStreckenLayout(circuitDataFinal);
+};
+
+
 
 

@@ -32,10 +32,10 @@
 .ShowBoxes{
     width: 400px;
     height: 200px;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
     /*background-color: blue;*/
     /*border-color: black;*/
-    border-style: outset;
+    /*border-style: outset;*/
     margin: 20px;
     padding: 15px;
     
@@ -91,10 +91,15 @@
 
 .HeaderName{
     pointer-events: none;
+    border-style: solid;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 2px;
 }
 
 .NameOfHeader{
-    
+   
 }
 
   
