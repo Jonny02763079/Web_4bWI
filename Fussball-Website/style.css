@@ -1,6 +1,5 @@
 body {
     margin: 0;
-
 }
 
 .Header {
@@ -107,6 +106,7 @@ body {
 
 .team-row:hover {
     transform: scale(1.05);
+    cursor: pointer;
 }
 
 .team-icon {

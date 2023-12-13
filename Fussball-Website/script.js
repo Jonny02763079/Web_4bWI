@@ -54,7 +54,6 @@ const loadUpcomingGames = () => {
 
 const tableData = [];
 const matchData = [];
-const idOfTeams = []
 
 function loadTable(tableData) {
     const element = document.getElementById("table");
@@ -180,7 +179,7 @@ const loadMatches = (matchData) => {
 
 const loadResults = (matchData) => {
     const element = document.getElementById("Matches");
-
+    console.log(matchData)
     let outputForTable = '<div class="results-row results-header">';
     outputForTable += '<div>Liga</div>';
     outputForTable += '<div>Gruppe</div>';
@@ -254,7 +253,7 @@ function hideMatchs() {
 
 function changeIndexAndLoad(index, func) { //Callback-Funktion
     // Ändere den Index in der URL
-    const newUrl = 'http://127.0.0.1:5500/Fussball-Website/index.html?id=' + index;
+    const newUrl = 'http://10.110.48.238:5500/Fussball-Website/index.html?id=' + index;
     history.pushState({}, '', newUrl);
 
     // Rufe die zugehörige Funktion auf
