@@ -12,18 +12,20 @@ function App() {
     const [fetchedGames, setFetchedGames] = useState<Data[]>([]);
     const [fetchedGamesTeams, setFetchedGamesTeams] = useState<DataTeams[]>([]);
     const [fetchedGamesUpcoming, setFetchedGamesUpcoming] = useState<DataUpcoming[]>([]);
+    const [Teams, setRenderedTeams] = useState<any>([]);
 
     useEffect(() => {
-        fetchedGamesTeams.forEach(element => {
+        const renderedTeams = fetchedGamesTeams.map(element => {
             <TableRowsTeams teamData={element}></TableRowsTeams>
-        });
+        })
+        setRenderedTeams(renderedTeams)
     }, [fetchedGamesTeams])
 
     return (
         <>
             <Header setDataFetched={setFetchedGames} setDataFetchedTeams={setFetchedGamesTeams} setDataFetchedUpcoming={setFetchedGamesUpcoming}></Header>
             <div className='motherBox'>
-
+                {Teams}
             </div>
 
             hallo
