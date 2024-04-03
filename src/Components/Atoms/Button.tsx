@@ -1,14 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 type Props = {
     name: string;
-    fn: () => void;
 }
 
-export default function Button({ name, fn }: Props) {
+export default function Button({ name }: Props) {
     return (
         <>
-            <button onClick={fn}>{name}</button>
+            <Link to={`/${name}`}>{name}</Link>
         </>
     );
 }

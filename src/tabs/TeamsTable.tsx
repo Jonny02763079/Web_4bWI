@@ -6,6 +6,7 @@ import { DataUpcoming } from '../Components/Types/DataTypeUpcoming.tsx'
 import TableRowsTeams from '../Components/Molekuls/TableRowsTeams.tsx'
 import { DataTeams } from '../Components/Types/DataTypeTeams.tsx'
 
+
 function App() {
 
     const [fetchedGames, setFetchedGames] = useState<Data[]>([]);

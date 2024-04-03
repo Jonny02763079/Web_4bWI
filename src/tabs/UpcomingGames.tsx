@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { Data } from '../Components/Types/DataType.tsx'
 import { DataUpcoming } from '../Components/Types/DataTypeUpcoming.tsx'
 
+
 function UpcomingGames() {
 
     const [fetchedGames, setFetchedGames] = useState<Data[]>([]);

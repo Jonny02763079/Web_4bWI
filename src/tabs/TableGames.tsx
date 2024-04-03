@@ -1,9 +1,10 @@
 import './App.css'
-import Header from '../Components/Molekuls/Header'
-import TableRows from '../Components/Molekuls/TableRows'
+import Header from '../Components/Molekuls/Header.tsx'
+import TableRows from '../Components/Molekuls/TableRows.tsx'
 import { useEffect, useState } from 'react'
 import { Data } from '../Components/Types/DataType.tsx'
 import { DataUpcoming } from '../Components/Types/DataTypeUpcoming.tsx'
+
 
 function TableGames() {
 
